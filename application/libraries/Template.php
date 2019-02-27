@@ -1,8 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Template {
-		var $template_data = array();
-		
+		var $template_data = array();	
+
+		function __construct() {
+			$this->CI =& get_instance();
+			$this->set('title',$this->CI->config->item('web_name'));
+		}
+
 		function set($name, $value)
 		{
 			$this->template_data[$name] = $value;

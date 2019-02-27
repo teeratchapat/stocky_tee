@@ -29,4 +29,11 @@ class Welcome extends CI_Controller {
 	public function about(){
 		$this->template->load('template/template', 'about');
 	}
+
+	public function black(){
+		// $this->load->view('template/black');
+		// echo base_url();
+		// $this->template->set('title','TeeBOI');
+		$this->template->load('template/black', 'users/table');
+	}
 }

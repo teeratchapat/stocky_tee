@@ -23,7 +23,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
+
+if (stripos($_SERVER["HTTP_HOST"], "localhost") !== false) {
+    $bas_url = 'http://localhost/stocky_tee/';
+} else {
+    $bas_url = '';
+}
+
+$config['base_url'] = $bas_url;
+
+$config['web_name'] = 'TBOY';
 
 /*
 |--------------------------------------------------------------------------
@@ -77,6 +86,7 @@ $config['url_suffix'] = '';
 |
 */
 $config['language']	= 'english';
+
 
 /*
 |--------------------------------------------------------------------------
